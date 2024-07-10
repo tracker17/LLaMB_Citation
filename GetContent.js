@@ -1,6 +1,6 @@
-const GetContent = async (page, instance, agent_id, access_token) => {
+const GetContent = async (page, instance, agent_id, access_token, start_date, end_date) => {
   //   let url = `https://c25.avaamo.com/api/v1/agents/1100/query_insights.json?per_page=100&page=&utc_offset=19800&start_date=01/07/2024&end_date=09/07/2024`;
-  let url = `https://${instance}.avaamo.com/api/v1/agents/${agent_id}/query_insights.json?per_page=100&page=${page}&utc_offset=19800&start_date=09/07/2024&end_date=10/07/2024`;
+  let url = `https://${instance}.avaamo.com/api/v1/agents/${agent_id}/query_insights.json?per_page=100&page=${page}&utc_offset=19800&start_date=${start_date}&end_date=${end_date}`;
   let args = {
       method: "GET",
       headers: {

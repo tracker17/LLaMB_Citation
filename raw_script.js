@@ -4,11 +4,13 @@ const { Parser } = require("json2csv");
 
 var instance = "c25";
 var agent_id = "1384";
-var access_token = "933efe7bfb404c0a9df50a09b8904c4e";
+var access_token = "**Your**Token**";
+var start_date = "09/07/2024";
+var end_date = "10/07/2024";
 
 async function test() {
   let GetContent_resp = "";
-  GetContent_resp = await GetContent("1", instance, agent_id, access_token);
+  GetContent_resp = await GetContent("1", instance, agent_id, access_token, start_date, end_date);
   // console.log("\n GetFiles_resp: ", GetFiles_resp);
   if (GetContent_resp === "failed") {
     console.log("\n GetContent_resp failed");
@@ -19,7 +21,7 @@ async function test() {
 
   if (GetContent_resp.page > 1) {
     for (let i = 2; i <= GetContent_resp.page; i++) {
-      GetContent_resp = await GetContent(i, instance, agent_id, access_token);
+      GetContent_resp = await GetContent(i, instance, agent_id, access_token, start_date, end_date);
       // console.log("\n GetFiles_resp2: ", GetFiles_resp);
       if (GetContent_resp === "failed") {
         console.log("\n GetContent_resp failed");
